@@ -47,7 +47,10 @@ sed -i "2s/.*/"$eth0"	"$hostname".stratus-technologies.co.uk	"$hostname"/" /etc/
 #sed -i "25s/.*/	address "$eth1"/" /etc/network/interfaces
 
 #Install Certbot
-apt-get -y install certbot python-certbot-nginx --fix-missing -t jessie-backports
+apt-get -y install certbot python-certbot-nginx --fix-missing -t stretch-backports
+
+#Obtain and Install Certificate
+certbot --nginx
 
 #Restart Services
 /etc/init.d/hostname.sh start
